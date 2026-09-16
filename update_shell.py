@@ -1,6 +1,14 @@
 import re
+import os
+import sys
 
 file_path = 'apps/driver/lib/screens/shell_screen.dart'
+
+if not os.path.exists(file_path):
+    print(f"Error: Target file not found at '{file_path}'")
+    print("Please ensure you are running this script from the repository root directory.")
+    sys.exit(1)
+
 with open(file_path, 'r', encoding='utf-8') as f:
     content = f.read()
 
